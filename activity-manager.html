@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Manager - AI Home Instance</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for Graph -->
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="server-info.html">Server Info</a></li>
+                <li><a href="networking.html">Networking</a></li>
+                <li><a href="security.html">Security</a></li>
+                <li><a href="activity-manager.html" class="active">Activity Manager</a></li>
+                <li><a href="power-management.html">Power Management</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1>Activity Manager</h1>
+
+            <!-- Device Spec Usages -->
+            <section>
+                <h2>Device Usage</h2>
+                <div class="usage-stats">
+                    <p>CPU Usage: <span id="cpu-usage">40%</span></p>
+                    <p>RAM Usage: <span id="ram-usage">60%</span></p>
+                    <p>Disk Usage: <span id="disk-usage">45%</span></p>
+                </div>
+
+                <h3>Task Manager</h3>
+                <p>Tasks Running: <span id="tasks-running">8</span></p>
+                <p>AI Modules Running: <span id="ai-modules-running">2</span></p>
+            </section>
+
+            <!-- AI Module Toggle -->
+            <section>
+                <h2>AI Module Integration</h2>
+                <label for="ai-module-on">Enable AI Modules:</label>
+                <input type="radio" id="ai-module-on" name="ai-module" value="on"> ON
+                <input type="radio" id="ai-module-off" name="ai-module" value="off"> OFF
+            </section>
+
+            
+
+    <script src="script.js"></script>
+</body>
+</html>

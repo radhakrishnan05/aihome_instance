@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security - AI Home Instance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="server-info.html">Server Info</a></li>
+                <li><a href="networking.html">Networking</a></li>
+                <li><a href="security.html" class="active">Security</a></li>
+                <li><a href="activity-manager.html">Activity Manager</a></li>
+                <li><a href="power-management.html">Power Management</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1>Security Settings</h1>
+            
+            <!-- Security Status -->
+            <section>
+                <h2>Security Status</h2>
+                <div class="status">
+                    <p>Status: <span id="security-status">Active</span></p>
+                </div>
+            </section>
+            
+            <!-- Encryption -->
+            <section>
+                <h2>Encryption</h2>
+                <button class="toggle-button" id="encryption-toggle">Enable 128-bit Encryption</button>
+            </section>
+
+            <!-- Network Security -->
+            <section>
+                <h2>Network Security</h2>
+                <button class="toggle-button" id="network-security-toggle">Enable Network Security</button>
+            </section>
+
+            <!-- Login Reset Section -->
+            <section>
+                <h2>Reset Login</h2>
+                <label for="new-username">New Username:</label>
+                <input type="text" id="new-username" placeholder="Enter new username">
+                <label for="new-password">New Password:</label>
+                <input type="password" id="new-password" placeholder="Enter new password">
+                <button id="reset-login">Reset Login</button>
+            </section>
+
+            <!-- Scan for Threats -->
+            <section>
+                <h2>Scan for Threats</h2>
+                <button id="scan-btn">Start Scan</button>
+                <p id="scan-result"></p>
+                <p id="scan-timer" style="visibility: hidden;"></p>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

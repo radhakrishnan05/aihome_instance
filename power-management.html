@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styling for Power Management page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .section {
+            margin: 30px auto;
+            width: 80%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+        }
+
+        .section label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            border-radius: 50%;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .info {
+            font-size: 20px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="section">
+    <h2>Power Management</h2>
+
+    <!-- Power Intake Section -->
+    <div class="info">
+        <label for="power-intake">Power Intake by Device:</label>
+        <span id="power-intake">65W</span>
+    </div>
+
+    <!-- Overclocking Section -->
+    <div class="info">
+        <label for="overclocking">Overclocking:</label>
+        <label class="switch">
+            <input type="checkbox" id="overclocking">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <!-- CPU Speed Section -->
+    <div class="info">
+        <label for="cpu-speed">CPU Speed (GHz):</label>
+        <span id="cpu-speed">3.2 GHz</span>
+    </div>
+
+    <!-- Temperature Section -->
+    <div class="info">
+        <label for="device-temperature">Device Temperature:</label>
+        <span id="device-temperature">45°C</span>
+    </div>
+</div>
+
+<script>
+// Simulate real-time data (You can replace these with actual API calls or system commands)
+document.getElementById('power-intake').textContent = '65W'; // Example power intake
+document.getElementById('cpu-speed').textContent = '3.2 GHz'; // Example CPU speed
+document.getElementById('device-temperature').textContent = '45°C'; // Example device temperature
+
+// Handle Overclocking toggle
+document.getElementById('overclocking').addEventListener('change', function() {
+    if (this.checked) {
+        alert("Overclocking is now enabled.");
+        // Example of increasing the CPU speed when overclocking is enabled
+        document.getElementById('cpu-speed').textContent = '4.0 GHz'; // Overclocked speed
+    } else {
+        alert("Overclocking is now disabled.");
+        // Example of reverting to the default CPU speed
+        document.getElementById('cpu-speed').textContent = '3.2 GHz'; // Default speed
+    }
+});
+</script>
+
+</body>
+</html>

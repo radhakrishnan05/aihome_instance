@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking - AI Home Instance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">AI Home Instance</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="server_info.html">Server Info</a></li>
+            <li><a href="networking.html" class="active">Networking</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="activity_manager.html">Activity Manager</a></li>
+            <li><a href="power_management.html">Power Management</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Networking Section -->
+    <div class="main-content">
+        <h1>Networking</h1>
+        <div class="tabs-container">
+            <!-- Inbound/Outbound Speed and Bandwidth Used -->
+            <div class="tab-button active">Network Stats</div>
+            <div class="tab-button">Firewall</div>
+            <div class="tab-button">Network Security</div>
+        </div>
+
+        <!-- Network Stats Tab -->
+        <div class="tab-content active">
+            <h2>Network Speed</h2>
+            <div class="network-stats">
+                <p><strong>Inbound Speed:</strong> 100 Mbps</p>
+                <p><strong>Outbound Speed:</strong> 50 Mbps</p>
+                <p><strong>Bandwidth Used:</strong> 500 GB</p>
+            </div>
+
+            <h2>Latency to Various Servers</h2>
+            <table class="latency-table">
+                <thead>
+                    <tr>
+                        <th>Server</th>
+                        <th>Latency (ms)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Google</td>
+                        <td>20 ms</td>
+                    </tr>
+                    <tr>
+                        <td>Cloudflare</td>
+                        <td>25 ms</td>
+                    </tr>
+                    <tr>
+                        <td>Cloud6</td>
+                        <td>30 ms</td>
+                    </tr>
+                    <tr>
+                        <td>AWS</td>
+                        <td>50 ms</td>
+                    </tr>
+                    <tr>
+                        <td>Azure</td>
+                        <td>35 ms</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Firewall Tab -->
+        <div class="tab-content">
+            <h2>Firewall Settings</h2>
+            <button class="firewall-button" style="background-color: #ff0000;">Enable Firewall</button>
+            <button class="firewall-button" style="background-color: #cc0000; margin-left: 1rem;">Disable Firewall</button>
+            <h3>Active Port Forwarding Rules</h3>
+            <table>
+                <tr>
+                    <th>Port</th>
+                    <th>Direction</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>8080</td>
+                    <td>Inbound</td>
+                    <td>Allow</td>
+                </tr>
+                <tr>
+                    <td>443</td>
+                    <td>Outbound</td>
+                    <td>Block</td>
+                </tr>
+            </table>
+        </div>
+        
+
+        <!-- Network Security Tab -->
+        <div class="tab-content">
+            <h2>Network Security</h2>
+            <button class="firewall-button" style="background-color: #ff0000;">Enable Firewall</button>
+            
+            <h3>Create Virtual Tunnel</h3>
+            <form>
+                <label for="tunnel-name">Tunnel Name:</label>
+                <input type="text" id="tunnel-name" name="tunnel-name" placeholder="Enter Tunnel Name">
+                <label for="tunnel-type">Tunnel Type:</label>
+                <select id="tunnel-type" name="tunnel-type">
+                    <option value="vpn">VPN</option>
+                    <option value="vlan">VLAN</option>
+                </select>
+                <button type="submit">Create Tunnel</button>
+            </form>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

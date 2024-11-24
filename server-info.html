@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Home Instance - Server Info</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">AI Home Instance</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="server-info.html">Server Info</a></li>
+                <li><a href="networking.html">Networking</a></li>
+                <li><a href="security.html">Security</a></li>
+                <li><a href="activity-manager.html">Activity Manager</a></li>
+                <li><a href="power-management.html">Power Management</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="server-info-content">
+        <h1>Server Information</h1>
+        <div class="tabs-container">
+            <div class="tabs">
+                <button class="tab-button active" onclick="showTab('overview')">Overview</button>
+                <button class="tab-button" onclick="showTab('specs')">Specifications</button>
+                <button class="tab-button" onclick="showTab('owner')">Owner Info</button>
+            </div>
+
+            <div id="overview" class="tab-content active">
+                <h2>Overview</h2>
+                <p>Here you can view the general status of the server.</p>
+                <p><strong>Device Name:</strong> Home Instance</p>
+                <p><strong>Device Type:</strong> Raspberry Pi</p>
+                <p><strong>Status:</strong> Running</p>
+            </div>
+
+            <div id="specs" class="tab-content">
+                <h2>Specifications</h2>
+                <p><strong>CPU:</strong> Raspberry Pi 4 Model B</p>
+                <p><strong>RAM:</strong> 4GB LPDDR4</p>
+                <p><strong>Storage:</strong> 32GB SSD</p>
+                <p><strong>Network:</strong> Gigabit Ethernet</p>
+                <p><strong>OS:</strong> Raspberry Pi OS</p>
+                <p><strong>Uptime:</strong> 34 Days, 10 Hours</p>
+            </div>
+
+            <div id="owner" class="tab-content">
+                <h2>Owner Information</h2>
+                <p><strong>Server Owner:</strong> Ray</p>
+                <p><strong>Ray ID:</strong> <span id="ray-id"></span></p>
+                <p><strong>Machine ID:</strong> <span id="machine-id"></span></p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Function to generate random Ray ID and Machine ID
+        function generateRandomId() {
+            return Math.random().toString(36).substring(2, 15);
+        }
+
+        // Populate Ray ID and Machine ID
+        document.getElementById('ray-id').textContent = generateRandomId();
+        document.getElementById('machine-id').textContent = generateRandomId();
+
+        // Tab switching functionality
+        function showTab(tabName) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Show the clicked tab and add active class to the button
+            document.getElementById(tabName).classList.add('active');
+            document.querySelector(`button[onclick="showTab('${tabName}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
